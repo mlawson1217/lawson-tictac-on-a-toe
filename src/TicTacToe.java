@@ -65,7 +65,7 @@ public class TicTacToe {
 			do {
 				openPositions();
 				decision = cpuRuleChoice();
-				System.out.println("This");
+				//System.out.println("This");
 			} while(board[freeX[decision]][freeY[decision]] != ' ');
 			
 			board[freeX[decision]][freeY[decision]] = player;
@@ -158,25 +158,25 @@ public class TicTacToe {
 		int finalChoice = 0;
 		boolean found = false;
 		
-		for (int i = 0; i < stillOpen - 1; i++) {
+		for (int i = 0; i < stillOpen; i++) {
 			if ((board[freeX[i]][0] == board[freeX[i]][1] && board[freeX[i]][0] == human) || (board[freeX[i]][0] == board[freeX[i]][2]  && board[freeX[i]][0] == human) || (board[freeX[i]][1] == board[freeX[i]][2] && board[freeX[i]][1] == human)) {
 				choice1 = i;
 			}
 		} // end for
 		// rule 1: vertical
-		for (int i = 0; i < stillOpen - 1; i++) {
+		for (int i = 0; i < stillOpen; i++) {
 			if ((board[0][freeY[i]] == board[1][freeY[i]] && board[0][freeY[i]] == human) || (board[0][freeY[i]] == board[2][freeY[i]] && board[0][freeY[i]] == human)|| (board[1][freeY[i]] == board[2][freeY[i]] && board[1][freeY[i]] == human)) {
 				choice2 = i;
 			}
 		} // end for
 		// rule 1: diagonal from top left
-		for (int i = 0; i < stillOpen - 1; i++) {
+		for (int i = 0; i < stillOpen; i++) {
 			if ((board[0][0] == board[1][1] && freeX[i] == 2 && freeY[i] == 2 && board[1][1] == human) || (board[1][1] == board[2][2] && freeX[i] == 0 && freeY[i] == 0 && board[1][1] == human) || (board[0][0] == board[2][2] && freeX[i] == 1 && freeY[i] == 1 && board[0][0] == human)) {
 				choice3 = i;
 			}
 		} // end for
 		// rule 1: diagonal from top right
-		for (int i = 0; i < stillOpen - 1; i++) {
+		for (int i = 0; i < stillOpen; i++) {
 			if ((board[0][2] == board[1][1] && freeX[i] == 2 && freeY[i] == 0 && board[1][1] == human) || (board[1][1] == board[2][0] && freeX[i] == 0 && freeY[i] == 2 && board[1][1] == human) || (board[0][2] == board[2][0] && freeX[i] == 1 && freeY[i] == 1 && board[0][2] == human)) {
 				choice3 = i;
 			}
